@@ -5,9 +5,13 @@ import 'package:fluttertoast/fluttertoast.dart';
 class Buttons extends StatefulWidget {
   String? _value;
 
+  Buttons({super.key});
+
   @override
   State<Buttons> createState() => _ButtonsState();
 }
+
+List<String> _items = ["One", "Two", "Three"];
 
 class _ButtonsState extends State<Buttons> {
   @override
@@ -68,20 +72,9 @@ class _ButtonsState extends State<Buttons> {
             DropdownButton(
               value: widget._value,
               hint: const Text("Drop Down"),
-              items: const [
-                DropdownMenuItem(
-                  value: 'One',
-                  child: Text('One'),
-                ),
-                DropdownMenuItem(
-                  value: 'Two',
-                  child: Text('Two'),
-                ),
-                DropdownMenuItem(
-                  value: 'Three',
-                  child: Text('Three'),
-                ),
-              ],
+              items: _items.map((String mapValue) {
+                return DropdownMenuItem(value: mapValue, child: Text(mapValue));
+              }).toList(),
               onChanged: (value) {
                 setState(() {
                   widget._value = value;
