@@ -8,10 +8,12 @@ class NaigationRail extends StatefulWidget {
 class _NaigationRailState extends State<NaigationRail> {
   int _selectedIndex = 0;
   final List _pages = [
-    Container(child: const Center(child: Text('Wifi'))),
-    Container(child: const Center(child: Text('Favourite'))),
-    Container(child: const Center(child: Text('Camera'))),
-    Container(child: const Center(child: Text('Home'))),
+    Container(
+        color: Colors.blueAccent, child: const Center(child: Text('Wifi'))),
+    Container(
+        color: Colors.green, child: const Center(child: Text('Favourite'))),
+    Container(color: Colors.grey, child: const Center(child: Text('Camera'))),
+    Container(color: Colors.amber, child: const Center(child: Text('Home'))),
   ];
   @override
   Widget build(BuildContext context) {
@@ -28,13 +30,15 @@ class _NaigationRailState extends State<NaigationRail> {
             children: [
               NavigationRail(
                 elevation: 15.0,
-                useIndicator: true,
                 labelType: NavigationRailLabelType.all,
-                selectedLabelTextStyle: const TextStyle(color: Colors.black),
-                backgroundColor: Colors.grey,
-                indicatorColor: Colors.cyan,
-                minWidth: 80.0,
                 selectedIndex: _selectedIndex,
+                leading: const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 12),
+                  child: CircleAvatar(
+                    backgroundImage: NetworkImage(
+                        "https://scontent.fdac90-1.fna.fbcdn.net/v/t39.30808-6/273148842_1133453604057186_7871472092129708407_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=174925&_nc_eui2=AeHDUMHAalqpw9DK5Bdto9X96AqBwf5CqVjoCoHB_kKpWP2sOm2x3s7HQC98XQ9Qk_fS9YUY10sM4lY88g0Lr_7Q&_nc_ohc=sTJ-n4u-pTIAX8HKmWF&_nc_oc=AQkqeUqcxoEfEulask1B0z4FfOnizi36XW6ofwySDuLYDWk2Ih-fgiYZ7Rboq5J_t1c&_nc_ht=scontent.fdac90-1.fna&oh=00_AfBuKEeH0jutjYuza3ODb2WcV4H7YVZ7uxXLbK-TRqHIJQ&oe=63FA1850"),
+                  ),
+                ),
                 onDestinationSelected: (int index) {
                   setState(() {
                     _selectedIndex = index;
@@ -42,18 +46,19 @@ class _NaigationRailState extends State<NaigationRail> {
                 },
                 destinations: const [
                   NavigationRailDestination(
-                      icon: Icon(Icons.wifi, color: Colors.black),
-                      label: Text("Wifi")),
+                      icon: SizedBox.shrink(),
+                      label: RotatedBox(quarterTurns: -1, child: Text("Wifi"))),
                   NavigationRailDestination(
-                      icon: Icon(Icons.favorite_border, color: Colors.black),
-                      label: Text("favorite")),
+                      icon: SizedBox.shrink(),
+                      label: RotatedBox(
+                          quarterTurns: -1, child: Text("Favorite"))),
                   NavigationRailDestination(
-                      icon: Icon(Icons.linked_camera_outlined,
-                          color: Colors.black),
-                      label: Text("Camera")),
+                      icon: SizedBox.shrink(),
+                      label:
+                          RotatedBox(quarterTurns: -1, child: Text("Camera"))),
                   NavigationRailDestination(
-                      icon: Icon(Icons.house, color: Colors.black),
-                      label: Text("Home")),
+                      icon: SizedBox.shrink(),
+                      label: RotatedBox(quarterTurns: -1, child: Text("Home"))),
                 ],
               ),
               Expanded(
