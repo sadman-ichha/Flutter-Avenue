@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class NaigationRail extends StatefulWidget {
+  const NaigationRail({super.key});
+
   @override
   State<NaigationRail> createState() => _NaigationRailState();
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_avenue/app_exit.dart';
 import 'widgets/Navigation Rail/navigation_rail.dart';
 
 void main() {
@@ -10,10 +11,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: "Flutter Avenue",
       debugShowCheckedModeBanner: false,
-      home: NaigationRail(),
+      home: AppExitScreen(),
     );
   }
 }
