@@ -4,7 +4,7 @@ class TimeDatePicker extends StatelessWidget {
   TimeDatePicker({super.key});
 
   String? time, date;
-  
+
   pickTime() async {}
 
   pickDate() async {}
@@ -37,7 +37,7 @@ class TimeDatePicker extends StatelessWidget {
 
           // Elevated Button
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () => pickDate(),
             child: const Text('Picked Date'),
           ),
         ],
