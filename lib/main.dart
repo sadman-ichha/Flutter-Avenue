@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'widgets/BottomNavBar & Tabbar/bottom_nav_controller.dart';
+import 'widgets/Navigation Rail/navigation_rail.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Flutter Avenue",
       debugShowCheckedModeBanner: false,
-      home: BottomNavControllar(),
+      home: NaigationRail(),
     );
   }
 }
