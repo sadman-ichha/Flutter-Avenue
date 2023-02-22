@@ -1,13 +1,44 @@
+import 'dart:developer';
 import 'package:flutter/material.dart';
 
-class TimeDatePicker extends StatelessWidget {
+class TimeDatePicker extends StatefulWidget {
   TimeDatePicker({super.key});
 
-  String? time, date;
+  @override
+  State<TimeDatePicker> createState() => _TimeDatePickerState();
+}
 
-  pickTime() async {}
+class _TimeDatePickerState extends State<TimeDatePicker> {
+  TimeOfDay? _time;
+  DateTime? _date;
 
-  pickDate() async {}
+// user selected Time method
+  Future<void> getTime(context) async {
+    final TimeOfDay? userSelectedTime = await showTimePicker(
+      initialEntryMode: TimePickerEntryMode.dial,
+      context: context,
+      initialTime: TimeOfDay.now(),
+    );
+
+    log(getTime.toString());
+
+    setState(() {
+      _time = userSelectedTime;
+    });
+  }
+
+// user selected Date method
+  getDate() async {
+    DateTime? userSelectedDate = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(1999),
+      lastDate: DateTime(DateTime.now().year + 10),
+    );
+    setState(() {
+      _date = userSelectedDate;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,24 +52,30 @@ class TimeDatePicker extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            "Picked Time : $time ",
+            _time == null
+                ? " No Selected Time"
+                : "Time: ${_time!.format(context)}",
             style: const TextStyle(fontSize: 20.0),
           ),
-          Text(
-            "Picked Date : $date ",
-            style: const TextStyle(fontSize: 20.0),
-          ),
-          const Divider(),
-          // Elevated Button
+          const SizedBox(height: 10.0),
+          // Button
           ElevatedButton(
-            onPressed: () => pickTime(),
+            onPressed: () => getTime(context),
             child: const Text('Picked Time'),
           ),
-
+          const SizedBox(height: 10.0),
+          const Divider(),
+          Text(
+            _date == null
+                ? "No Select Date"
+                : "Date: ${_date!.day}-${_date!.month}-${_date!.year}",
+            style: const TextStyle(fontSize: 20.0),
+          ),
+          const SizedBox(height: 10.0),
           // Elevated Button
           ElevatedButton(
-            onPressed: () => pickDate(),
-            child: const Text('Picked Date'),
+            onPressed: () => getDate(),
+            child: const Text("Picked Date"),
           ),
         ],
       ),
