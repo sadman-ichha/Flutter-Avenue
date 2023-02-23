@@ -11,11 +11,11 @@ class _ShimmerState extends State<Shimmer> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 3),(){
+    Future.delayed(const Duration(seconds: 3), () {
       setState(() {
-         isLoading = false;
+        isLoading = false;
       });
-    } );
+    });
   }
 
   @override
@@ -30,7 +30,7 @@ class _ShimmerState extends State<Shimmer> {
           itemCount: 15,
           itemBuilder: (context, int index) {
             return isLoading == true
-                ? ShimmerEffect()
+                ? const ShimmerEffect()
                 : Container(
                     height: 150.0,
                     margin: const EdgeInsets.only(bottom: 10.0),
