@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Flutter Avenue",
       debugShowCheckedModeBanner: false,
-      home: ImagePicker(),
+      home: ImagesPicker(),
     );
   }
 }
