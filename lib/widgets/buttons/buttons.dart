@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class Buttons extends StatefulWidget {
-  String? _value;
-
   Buttons({super.key});
+  String? _value;
 
   @override
   State<Buttons> createState() => _ButtonsState();
