@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'widgets/buttons/buttons.dart';
+import 'packages/Image Picker/image_picker.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Flutter Avenue",
       debugShowCheckedModeBanner: false,
-      home: Buttons(),
+      home: ImagePicker(),
     );
   }
 }
