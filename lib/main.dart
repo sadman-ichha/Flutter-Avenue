@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'packages/Image Picker/image_picker.dart';
+import 'widgets/slivers/silivers.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,10 +10,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: "Flutter Avenue",
       debugShowCheckedModeBanner: false,
-      home: ImagesPicker(),
+      home: Slivers(),
     );
   }
 }
