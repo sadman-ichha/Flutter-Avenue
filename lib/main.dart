@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'widgets/Shimmer Effects/shimmer_effect.dart';
-import 'widgets/slivers/silivers.dart';
+
+import 'widgets/Shimmer Effects/shimmer.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -11,10 +12,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       title: "Flutter Avenue",
       debugShowCheckedModeBanner: false,
-      home: SimmerEffect(),
+      home: Shimmer()
     );
   }
 }
