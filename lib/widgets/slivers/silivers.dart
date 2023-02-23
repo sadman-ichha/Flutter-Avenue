@@ -9,6 +9,7 @@ class Slivers extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
+        physics:const BouncingScrollPhysics() ,
         slivers: [
           const SliversAppBar(),
           const SliversList(),
@@ -16,6 +17,7 @@ class Slivers extends StatelessWidget {
           SliverToBoxAdapter(
               child: Column(
             children: [
+              const SizedBox(height: 20.0),
               Container(
                 height: 200,
                 width: 300,

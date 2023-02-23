@@ -10,11 +10,9 @@ class SliversList extends StatelessWidget {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
         childCount: 5,
-        
         (BuildContext context, int index) {
           return Padding(
-            padding: const EdgeInsets.only(
-                left: 30.0, right: 30, top: 25.0),
+            padding: const EdgeInsets.only(left: 30.0, right: 30, top: 25.0),
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20.0),

@@ -14,12 +14,11 @@ class SliversAppBar extends StatelessWidget {
         centerTitle: false,
         stretch: true,
         floating: true,
-        expandedHeight: 200.0,
+        expandedHeight: 220.0,
         flexibleSpace: const FlexibleSpaceBar(
+            collapseMode: CollapseMode.parallax,
             stretchModes: <StretchMode>[
-              StretchMode.blurBackground,
-              StretchMode.blurBackground,
-              StretchMode.fadeTitle,
+              StretchMode.zoomBackground,
             ],
             background: Image(
               image: AssetImage("assets/images/feature.png"),
