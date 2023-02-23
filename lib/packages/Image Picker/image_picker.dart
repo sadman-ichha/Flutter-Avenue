@@ -10,19 +10,23 @@ class ImagesPicker extends StatefulWidget {
 class _ImagesPickerState extends State<ImagesPicker> {
   //const ImagePicker({super.key});
   final ImagePicker _picker = ImagePicker();
-
   XFile? image;
-
   List<XFile>? images;
 
   fromCamera() async {
-    final cameraImg = await _picker.pickImage(source: ImageSource.camera);
+    image = await _picker.pickImage(source: ImageSource.camera);
     setState(() {});
   }
 
-  fromGallery() {}
+  fromGallery() async {
+    image = await _picker.pickImage(source: ImageSource.gallery);
+    setState(() {});
+  }
 
-  pickMultiImage() {}
+  pickMultiImage() async {
+    images = await _picker.pickMultiImage();
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,22 +40,58 @@ class _ImagesPickerState extends State<ImagesPicker> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          // Image.file(File(image!.path)),
+          image == null
+              ? const Center(child: Text("Empty Photos"))
+              : ClipRRect(
+                  borderRadius: BorderRadius.circular(15.0),
+                  child: Image.file(
+                    File(image!.path),
+                    width: 200.0,
+                  ),
+                ),
           const SizedBox(height: 10.0),
+
+          // Camera Button & Gallery Button
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
-                  onPressed: () {}, icon: const Icon(Icons.photo_camera)),
+                  onPressed: () => fromCamera(),
+                  icon: const Icon(Icons.photo_camera)),
               const SizedBox(width: 15.0),
-              IconButton(onPressed: () {}, icon: const Icon(Icons.photo)),
+              IconButton(
+                  onPressed: () => fromGallery(),
+                  icon: const Icon(Icons.photo)),
             ],
           ),
           const Divider(thickness: 10.0, color: Colors.blue),
           ElevatedButton(
-              onPressed: () {}, child: const Text("Pick Multi Image")),
+              onPressed: () => pickMultiImage(),
+              child: const Text("Pick Multi Image")),
 
-          const Center(child: Text("Empty List")),
+          images == null
+              ? const Center(child: Text("Empty List"))
+              : Padding(
+                  padding: const EdgeInsets.only(left: 15.0, right: 15.0),
+                  child: SizedBox(
+                    height: 150.0,
+                    child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: images!.length,
+                        itemBuilder: (context, int index) {
+                          return Padding(
+                            padding: const EdgeInsets.only(right: 10.0),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(15),
+                              child: Image.file(
+                                File(images![index].path),
+                                height: 150,
+                              ),
+                            ),
+                          );
+                        }),
+                  ),
+                )
         ],
       ),
     );
