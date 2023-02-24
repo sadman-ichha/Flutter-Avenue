@@ -38,9 +38,24 @@ class _GoogleAdmobState extends State<GoogleAdmob> {
     ),
   );
 
+  final myInterstitialAds = InterstitialAd.load(
+      adUnitId: Platform.isAndroid
+          ? 'ca-app-pub-3940256099942544/1033173712'
+          : 'ca-app-pub-3940256099942544/4411468910',
+      request: const AdRequest(),
+      adLoadCallback: InterstitialAdLoadCallback(
+        onAdLoaded: (InterstitialAd ad) {
+          ad.show();
+        },
+        onAdFailedToLoad: (LoadAdError error) {
+          print('InterstitialAd failed to load: $error');
+        },
+      ));
+
   @override
   void initState() {
     myBanner.load();
+    myInterstitialAds;
     super.initState();
   }
 
@@ -48,7 +63,7 @@ class _GoogleAdmobState extends State<GoogleAdmob> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Table & DataTable"),
+        title: const Text("Google Admob"),
         centerTitle: true,
         backgroundColor: Colors.purple,
       ),
