@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_avenue/widgets/Table%20&%20DataTable/table_datatable.dart';
 
 class TableAndDataTable extends StatelessWidget {
-  const TableAndDataTable({super.key});
+// const TableAndDataTable({super.key});
+
+  final List<Map<String, dynamic>> _data = [
+    {"name": "John", "age": 25, "country": "USA"},
+    {"name": "Jane", "age": 30, "country": "Canada"},
+    {"name": "Mark", "age": 35, "country": "Australia"},
+    {"name": "Emily", "age": 27, "country": "UK"},
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +21,12 @@ class TableAndDataTable extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          const Text(
+            "Table Example",
+            style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.w500),
+            textAlign: TextAlign.center,
+          ),
+          const Divider(),
           Table(
             textDirection: TextDirection.ltr,
             border: TableBorder.all(width: 1.7, color: Colors.grey),
@@ -55,7 +67,33 @@ class TableAndDataTable extends StatelessWidget {
                 ],
               ),
             ],
-          )
+          ),
+          const SizedBox(height: 50.0),
+          DataTable(
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.grey),
+            ),
+            columns: const <DataColumn>[
+              DataColumn(label: Text("Name")),
+              DataColumn(label: Text("Age")),
+              DataColumn(label: Text("Country")),
+            ],
+            rows: _data
+                .map((data) => DataRow(
+                      cells: [
+                        DataCell(
+                          Text(data["name"]),
+                        ),
+                        DataCell(
+                          Text(data["age"].toString()),
+                        ),
+                        DataCell(
+                          Text(data["country"]),
+                        ),
+                      ],
+                    ))
+                .toList(),
+          ),
         ],
       ),
     );
