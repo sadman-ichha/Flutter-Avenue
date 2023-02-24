@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'widgets/Table & DataTable/table_dataTable.dart';
+import 'package:flutter_avenue/Google%20Admob/google_admob.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,10 +10,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return const MaterialApp(
       title: "Flutter Avenue",
       debugShowCheckedModeBanner: false,
-      home: TableAndDataTable(),
+      home: GoogleAdmob(),
     );
   }
 }
