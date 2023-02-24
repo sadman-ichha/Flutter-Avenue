@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_avenue/Google%20Admob/google_admob.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+
+import 'widgets/Code Based Animation/animated_default_text_style.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,10 +14,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: "Flutter Avenue",
       debugShowCheckedModeBanner: false,
-      home: GoogleAdmob(),
+      home: AnimatedDefaultTextStyleFlutter(),
     );
   }
 }
