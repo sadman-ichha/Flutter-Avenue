@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-import 'widgets/Code Based Animation/animated_default_text_style.dart';
+import 'Google Maps/google_maps.dart';
+
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,10 +15,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       title: "Flutter Avenue",
       debugShowCheckedModeBanner: false,
-      home: AnimatedDefaultTextStyleFlutter(),
+      home: GoogleMapsFlutter(),
     );
   }
 }
