@@ -25,7 +25,6 @@ class _GoogleMapsFlutterState extends State<GoogleMapsFlutter> {
         return;
       }
     }
-
     _permissionGranted = await location.hasPermission();
     if (_permissionGranted == PermissionStatus.denied) {
       _permissionGranted = await location.requestPermission();

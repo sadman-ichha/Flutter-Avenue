@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_avenue/Google%20Admob/google_admob.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-
-import 'Google Maps/google_maps.dart';
-
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,10 +13,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       title: "Flutter Avenue",
       debugShowCheckedModeBanner: false,
-      home: GoogleMapsFlutter(),
+      home: GoogleAdmob(),
     );
   }
 }
