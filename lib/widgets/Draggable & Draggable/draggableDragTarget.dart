@@ -26,8 +26,13 @@ class _DraggableState extends State<DraggableScreen> {
             Draggable(
               data: const FlutterLogo(),
               feedback: const FlutterLogo(size: 100),
-              childWhenDragging:
-                  const FlutterLogo(style: FlutterLogoStyle.markOnly),
+              childWhenDragging: Container(
+                height: 70.0,
+                width: 70.0,
+                decoration: BoxDecoration(
+                    color: Colors.grey,
+                    borderRadius: BorderRadius.circular(20.0)),
+              ),
               child: const FlutterLogo(size: 70),
               onDragStarted: () {
                 setState(() {
