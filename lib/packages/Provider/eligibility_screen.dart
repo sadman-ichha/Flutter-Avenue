@@ -3,7 +3,8 @@ import 'package:flutter_avenue/packages/Provider/eligibility_provider_screen.dar
 import 'package:provider/provider.dart';
 
 class EligibilityScreen extends StatelessWidget {
-  TextEditingController _ageController = TextEditingController();
+  EligibilityScreen({super.key});
+  final TextEditingController _ageController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
