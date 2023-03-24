@@ -1,4 +1,3 @@
-
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
@@ -50,8 +49,7 @@ class StripeController {
   }
 
   Future createPaymentInten(String amount, String currency) async {
-    String testKey =
-        'YOUR_Secret_KAY';
+    String testKey = 'YOUR_Secret_KAY';
 
     Map<String, dynamic> body = {
       'amount': calculateAmount(amount),
@@ -80,9 +78,8 @@ class StripeController {
   }
 }
 
-//
-
-snackBar({required String title, context}) {
+//snackber Widget
+void snackBar({required String title, context}) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
       content: Text(title),
