@@ -5,7 +5,7 @@ import 'Payment Gateway/Stripe/payment_screen.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'packages/Provider/eligibility_provider_screen.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   MobileAds.instance.initialize();
   Stripe.publishableKey =
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: "Flutter Avenue",
       debugShowCheckedModeBanner: false,
       home: PaymentScreen(),

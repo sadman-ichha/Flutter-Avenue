@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_avenue/Payment%20Gateway/Stripe/payment_controllar.dart';
 
-class PaymentScreen extends StatefulWidget {
-  const PaymentScreen({super.key});
+class PaymentScreen extends StatelessWidget {
+  //const PaymentScreen({super.key});
+  PaymentScreen({super.key});
+  StripeController stripeController = StripeController();
 
-  @override
-  State<PaymentScreen> createState() => _PaymentScreenState();
-}
-
-class _PaymentScreenState extends State<PaymentScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +18,8 @@ class _PaymentScreenState extends State<PaymentScreen> {
       ),
       body: Center(
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () =>
+              stripeController.makePayment(amount: "500", currency: "USD"),
           child: const Text("Payment Now"),
         ),
       ),
