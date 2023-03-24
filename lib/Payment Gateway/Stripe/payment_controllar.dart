@@ -49,6 +49,7 @@ class StripeController {
   }
 
   Future createPaymentInten(String amount, String currency) async {
+    // how to get Secrect Kay Goto https://stripe.com/docs/keys
     String testKey = 'YOUR_Secret_KAY';
 
     Map<String, dynamic> body = {
