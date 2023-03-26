@@ -9,7 +9,6 @@ import 'package:fluttertoast/fluttertoast.dart';
 class SslCommerzPaymentScreen extends StatelessWidget {
   const SslCommerzPaymentScreen({super.key});
 
-  // const PaymentScreen({super.key});
 
   Future<void> sslCommerzCall(double amount) async {
     Sslcommerz sslcommerz = Sslcommerz(
