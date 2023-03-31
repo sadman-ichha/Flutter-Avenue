@@ -11,7 +11,7 @@ Future<void> main() async {
       "pk_test_51MoSvCBxRMKAhtZ7If0CfWKboZDd2LiaH60T376NqRjqmHlqFKWAqYYWTLy5HgYQvDJsR8VYUT9wo7N5VXrRiOtt00ziZRAR2W";
   await Stripe.instance.applySettings();
   runApp(
-    //Multi provider
+    //Multi Provider
     MultiProvider(
       providers: [
         ListenableProvider(
