@@ -30,7 +30,7 @@ class _AgeHomeState extends State<AgeHome> {
             const SizedBox(height: 30),
             ElevatedButton(
               onPressed: () => pickDob(),
-              child: const Text('Pick Your Date of Birth'),
+              child: const Text('Pick Your Date of Birth' ),
             )
           ],
         ),
