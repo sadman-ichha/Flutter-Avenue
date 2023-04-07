@@ -15,7 +15,7 @@ class _AgeHomeState extends State<AgeHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Age Calculator'),
+        title: const Text('Age Calculator' ),
         centerTitle: true,
         systemOverlayStyle: SystemUiOverlayStyle(
             statusBarColor: Theme.of(context).primaryColor),
@@ -30,7 +30,7 @@ class _AgeHomeState extends State<AgeHome> {
             const SizedBox(height: 30),
             ElevatedButton(
               onPressed: () => pickDob(),
-              child: const Text('Pick Your Date of Birth' ),
+              child: const Text('Pick Your Date of Birth'),
             )
           ],
         ),
