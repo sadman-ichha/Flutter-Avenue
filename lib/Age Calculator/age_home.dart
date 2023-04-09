@@ -15,7 +15,7 @@ class _AgeHomeState extends State<AgeHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Age Calculator' ),
+        title: const Text('Age Calculator'),
         centerTitle: true,
         systemOverlayStyle: SystemUiOverlayStyle(
             statusBarColor: Theme.of(context).primaryColor),
