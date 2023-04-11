@@ -9,13 +9,13 @@ class AgeHome extends StatefulWidget {
 }
 
 class _AgeHomeState extends State<AgeHome> {
-  String myAge = '';
+  String myAge ='';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Age Calculator '),
+        title: const Text('Age Calculator'),
         centerTitle: true,
         systemOverlayStyle: SystemUiOverlayStyle(
             statusBarColor: Theme.of(context).primaryColor),
