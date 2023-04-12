@@ -9,7 +9,7 @@ class AgeHome extends StatefulWidget {
 }
 
 class _AgeHomeState extends State<AgeHome> {
-  String myAge = '';
+  String myAge ='';
 
   @override
   Widget build(BuildContext context) {
