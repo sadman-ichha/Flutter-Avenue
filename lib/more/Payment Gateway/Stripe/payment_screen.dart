@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_avenue/Payment%20Gateway/Stripe/payment_controllar.dart';
+import 'payment_controllar.dart';
 
 class StripePaymentScreen extends StatelessWidget {
   //const PaymentScreen({super.key});
