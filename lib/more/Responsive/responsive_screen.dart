@@ -8,13 +8,10 @@ class ResponsiveScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final currentWidth = MediaQuery.of(context).size.width;
-    // final currentHeight = MediaQuery.of(context).size.height;
-    // final currentAspectRatio = MediaQuery.of(context).size.aspectRatio;
     return Scaffold(
       body: ResponsiveWidget(
         mobileBody: const MobileBody(),
-        desktopBody:  DesktopBody(),
+        desktopBody: const DesktopBody(),
       ),
     );
   }

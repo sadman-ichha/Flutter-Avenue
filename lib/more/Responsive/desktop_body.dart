@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
 class DesktopBody extends StatelessWidget {
-  DesktopBody({super.key});
+  const DesktopBody({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: true,
       backgroundColor: Colors.purple[300],
       appBar: AppBar(
         title: const Text("D E S K T O P"),
@@ -15,7 +14,8 @@ class DesktopBody extends StatelessWidget {
       body: SingleChildScrollView(
         child: ConstrainedBox(
           constraints: BoxConstraints(
-            maxHeight: double.nan,
+            minHeight: 0.0,
+            maxHeight: MediaQuery.of(context).size.height * 8,
           ),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
