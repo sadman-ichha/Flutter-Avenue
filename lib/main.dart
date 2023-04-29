@@ -19,7 +19,7 @@ Future<void> main() async {
           create: (context) => EligibilityProviderScreen(),
         ),
       ],
-      child: const MyApp(),
+      child:const MyApp(),
     ),
   );
 }
