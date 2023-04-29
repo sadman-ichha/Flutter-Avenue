@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
-import 'more/Responsive/responsive_widget.dart';
+import 'more/Responsive/responsive_screen.dart';
 import 'packages/Provider/eligibility_provider_screen.dart';
 
 Future<void> main() async {
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: "Flutter Avenue",
       debugShowCheckedModeBanner: false,
-      home: ResponsiveWidget(),
+      home: ResponsiveScreen(),
     );
   }
 }

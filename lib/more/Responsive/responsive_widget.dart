@@ -1,17 +1,25 @@
 import 'package:flutter/material.dart';
 
 class ResponsiveWidget extends StatelessWidget {
-  const ResponsiveWidget({super.key});
+  Widget mobileBody;
+  Widget desktopBody;
+
+  ResponsiveWidget({
+    required this.mobileBody,
+    required this.desktopBody,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: AspectRatio(
-        aspectRatio: 2 / 1,
-        child: Container(
-          color: Colors.purple[200],
-        ),
-      ),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (constraints.maxWidth < 600) {
+          return mobileBody;
+        } else {
+          return desktopBody;
+        }
+      },
     );
   }
 }
