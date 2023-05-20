@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_stripe/flutter_stripe.dart';
 import 'more/Responsive/responsive_screen.dart';
 import 'packages/Provider/eligibility_provider_screen.dart';
 
@@ -19,7 +17,7 @@ Future<void> main() async {
           create: (context) => EligibilityProviderScreen(),
         ),
       ],
-      child:const MyApp(),
+      child: const MyApp(),
     ),
   );
 }
