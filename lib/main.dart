@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'more/Responsive/responsive_screen.dart';
 import 'packages/Provider/eligibility_provider_screen.dart';
+import 'packages/confetti effect/confetti.dart';
 
 Future<void> main() async {
   // WidgetsFlutterBinding.ensureInitialized();
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: "Flutter Avenue",
       debugShowCheckedModeBanner: false,
-      home: ResponsiveScreen(),
+      home: ConfettiEffect(),
     );
   }
 }
