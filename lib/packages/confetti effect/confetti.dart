@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 
@@ -38,7 +40,16 @@ class _ConfettiEffectState extends State<ConfettiEffect> {
             ),
           ),
         ),
-        ConfettiWidget(confettiController: _confettiController)
+        ConfettiWidget(
+          confettiController: _confettiController,
+          blastDirection: pi / 2,
+          colors: const [
+            Colors.black,
+            Colors.red,
+            Colors.green,
+          ],
+          gravity: 0.01,
+        )
       ],
     );
   }
